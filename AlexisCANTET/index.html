@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./script.js" type="module"></script>
+    <title>TP2</title>
+    <style>
+      * {
+        color: white;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(23, 161, 161);
+      }
+      input {
+        color: rgb(51, 50, 50);
+      }
+      h1 {
+        margin-top: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      #add {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 20px;
+        gap: 10px;
+        font-size: 1.3rem;
+      }
+      label {
+        font-size: 1.5rem;
+      }
+      #add-task {
+        background-color: rgb(51, 50, 50);
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-size: 1.2rem;
+        text-align: center;
+        border: 0;
+        color: white;
+      }
+      #button-end {
+        position: fixed;
+        z-index: 99;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+      }
+      button {
+        background-color: rgb(51, 50, 50);
+      }
+      #button-end > button {
+        width: 100%;
+        height: 80px;
+        font-size: 1.5rem;
+      }
+
+      .case {
+        height: 25px;
+        width: 25px;
+      }
+      .task {
+        height: 80px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.5rem;
+        text-decoration: none;
+      }
+
+      .task input.case:checked + .task-label {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Todo List <i class="fa-solid fa-pen" style="color: #ffffff"></i></h1>
+    <div id="add">
+      <label for="task">Nom de la tâche</label>
+      <section>
+        <input
+          type="text"
+          id="task"
+          style="color: rgb(51, 50, 50); height: 30px; width: 60%"
+        />
+        <input type="button" value="Ajouter" id="add-task" />
+      </section>
+    </div>
+    <task-list class="list"></task-list>
+    <div id="button-end"><button>Retirer les tâches effectuées</button></div>
+  </body>
+</html>
